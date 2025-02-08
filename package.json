@@ -3,5 +3,9 @@
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "socket.io-client": "^4.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   }
 }
