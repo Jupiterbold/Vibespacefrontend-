@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Message from './Message'; // Importing the Message component
 
 function Chat({ messages, sendMessage }) {
   const [message, setMessage] = useState('');
@@ -15,13 +16,7 @@ function Chat({ messages, sendMessage }) {
     <div className="chat-container">
       <div className="messages">
         {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.type}`}>
-            {msg.type === 'file' ? (
-              <img src={msg.content} alt="uploaded file" />
-            ) : (
-              <p>{msg.content}</p>
-            )}
-          </div>
+          <Message key={index} message={msg} />
         ))}
       </div>
       <form onSubmit={handleSubmit}>
@@ -38,4 +33,3 @@ function Chat({ messages, sendMessage }) {
 }
 
 export default Chat;
-    
